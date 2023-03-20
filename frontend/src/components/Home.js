@@ -54,7 +54,7 @@ function Home() {
             <div className="header">
 
                 <div className="headerCov">
-                    <h1>Welcome to Run Order Products</h1>
+                    <h1>Welcome to <span> Run Order </span> Products</h1>
                     {/* <Search /> */}
                 </div>
             </div>

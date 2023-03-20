@@ -57,7 +57,7 @@ function Header() {
 
                                 (
                                     <div className="navbarUserProfile">
-                                        <img onClick={() => setOpen(!open)} src={user.avatar && user.avatar.url} alt={user && user.name} />
+                                        <img onClick={() => setOpen(!open)} src={user.avatar ? user.avatar.url : "./images/undraw_pic_profile_re_7g2h.svg"} alt={user && user.name} />
                                         <p className="userName" onClick={() => setOpen(!open)}>{user && user.name}</p>
                                         <a onClick={() => setOpen(!open)}><i class="fa-solid fa-angle-down"></i></a>
                                         <a onClick={() => setOpen(!open)}><i class="fa-solid fa-bars"></i></a>

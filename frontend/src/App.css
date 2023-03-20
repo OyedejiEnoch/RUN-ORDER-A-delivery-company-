@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
 
 html,
 body {
@@ -607,61 +607,3 @@ ul.CTAs a {
 }
 
 /* Reviews */
-
-.rating {
-    margin-top: 10rem;
-}
-
-.stars {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    padding-left: 0;
-}
-
-.star {
-    display: inline;
-    list-style: none;
-    font-size: 3rem;
-    padding-left: 0.9rem;
-    color: #e3e3e3;
-}
-
-.star:first-child {
-    padding-left: 0;
-}
-
-.orange {
-    color: #fa9c23;
-}
-
-.yellow {
-    color: #fdcc0d;
-}
-
-.review_user {
-    font-size: 0.8rem;
-    color: grey;
-}
-
-
-footer {
-    background-color: var(--second-color);
-
-}
-
-.footer {
-    margin-top: 50px;
-    padding: 50px;
-    color: #FFFBEB;
-}
-
-.footer h1 {
-    font-size: 25px;
-    color: white;
-}
-
-.footer a {
-    padding: 5px;
-    color: #FFFBEB;
-}
