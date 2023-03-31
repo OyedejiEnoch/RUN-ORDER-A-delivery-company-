@@ -17,8 +17,8 @@ function Product({ product }) {
                     <h3><Link className="link" to={`/product/${product._id}`}>{product.name}</Link></h3>
                     <div className="productPrice">
 
-                        <i class="fa-solid fa-cart-shopping shoppingIcon"></i>
-                        <p><i class="fa-solid fa-naira-sign"></i> {product.price}</p>
+                        <i className="fa-solid productCart fa-cart-shopping shoppingIcon"></i>
+                        <p><i className="fa-solid fa-naira-sign"></i> {product.price}</p>
                     </div>
 
                 </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Search.css"
 
 
 function Search() {
@@ -27,7 +28,7 @@ function Search() {
     return (
 
         <form onSubmit={searchHandler}>
-            <div class="input-group">
+            <div class="input-group search">
                 <input
                     type="text"
                     id="search_field"
@@ -37,8 +38,8 @@ function Search() {
                     value={keyword}
                 />
                 <div class="input-group-append">
-                    <button id="search_btn" class="btn">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                    <button id="search_btn" className="btn">
+                        <i className="fa fa-search" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>

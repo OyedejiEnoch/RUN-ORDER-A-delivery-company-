@@ -50,29 +50,17 @@ function Register() {
         formData.set('name', name);
         formData.set('email', email);
         formData.set('password', password);
-        formData.set('avatar', avatar);
+        // formData.set('avatar', avatar);
 
         dispatch(register(formData))
     }
 
     function onChange(e) {
 
-        if (e.target.name === 'avatar') {
-
-            const reader = new FileReader();
-
-            reader.onload = () => {
-                if (reader.readyState === 2) {
-                    setAvatarPreview(reader.result)
-                    setAvatar(reader.result)
-                }
-            }
-
-            reader.readAsDataURL(e.target.files[0])
-
-        } else {
-            setUser({ ...user, [e.target.name]: e.target.value })
-        }
+    setUser((prevValue)=>{
+        return { ...prevValue, [e.target.name]: e.target.value }
+    })
+        
     }
 
     return (
@@ -124,7 +112,7 @@ function Register() {
                             />
                         </div>
 
-                        <div className='form-group'>
+                        {/* <div className='form-group'>
                             <label htmlFor='avatar_upload'>Avatar</label>
                             <div className='d-flex align-items-center'>
                                 <div>
@@ -150,7 +138,7 @@ function Register() {
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         <button
                             id="register_button"

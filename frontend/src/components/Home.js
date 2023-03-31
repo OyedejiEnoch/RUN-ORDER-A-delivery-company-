@@ -8,6 +8,7 @@ import { toast, ToastContainer, } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import Pagination from "react-js-pagination"
 import { useParams } from "react-router-dom";
+import Search from "./layout/Search";
 import "./Home.css"
 
 // import Slider from "rc-slider"
@@ -55,7 +56,7 @@ function Home() {
 
                 <div className="headerCov">
                     <h1>Welcome to <span> Run Order </span> Products</h1>
-                    {/* <Search /> */}
+                    <Search />
                 </div>
             </div>
 

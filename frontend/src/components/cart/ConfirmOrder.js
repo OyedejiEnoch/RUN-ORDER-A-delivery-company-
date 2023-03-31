@@ -11,6 +11,7 @@ import { PaystackButton } from 'react-paystack'
 
 import { createOrder, clearErrors } from "../../action/orderActions"
 import { toast } from "react-toastify";
+import "./ConfirmOrder.css"
 
 function ConfirmOrder() {
     let navigate = useNavigate()
@@ -106,7 +107,7 @@ function ConfirmOrder() {
             <div className="row d-flex justify-content-between">
                 <div className="col-12 col-lg-8 mt-5 order-confirm">
 
-                    <h4 className="mb-3">Shipping Info</h4>
+                    <h4 className="mb-3">Delivery Info</h4>
                     <p><b>Name:</b>{user && user.name}</p>
                     <p><b>Phone:</b> {shippingInfo.phoneNo}</p>
                     <p className="mb-4"><b>Address:</b> {`${shippingInfo.address},`}</p>
@@ -119,19 +120,14 @@ function ConfirmOrder() {
                     {cartItems.map(item => (
                         <Fragment>
                             <hr />
-                            <div className="cart-item my-1" key={item.product}>
-                                <div className="row">
-                                    <div className="col-4 col-lg-2">
+                            <div className="cart-item " key={item.product}>
+                                <div className="cartAdjust">
+                                    <div className="cartAdjustProduct">
                                         <img src={item.image} alt="Laptop" height="45" width="65" />
-                                    </div>
-
-                                    <div className="col-5 col-lg-6">
-                                        <Link to={`/product/${item.product}`}>{item.name}</Link>
-                                    </div>
-
-
-                                    <div className="col-4 col-lg-4 mt-4 mt-lg-0">
-                                        <p>{item.quantity} x N {item.price} = <b>N {item.quantity * item.price}</b></p>
+                                        <Link className="link" to={`/product/${item.product}`}>{item.name}</Link>
+                                    </div>                               
+                                    <div className="cartAdjustPrice">
+                                        <p>{item.quantity} x <i class="fa-solid fa-naira-sign"></i> {item.price} = <b> <i class="fa-solid fa-naira-sign"></i>  {item.quantity * item.price}</b></p>
                                     </div>
 
                                 </div>
@@ -143,17 +139,17 @@ function ConfirmOrder() {
 
                 </div>
 
-                <div className="col-12 col-lg-3 my-4">
+                <div className="col-12 col-lg-3 my-4 orderSummary">
                     <div id="order_summary">
                         <h4>Order Summary</h4>
                         <hr />
-                        <p>Subtotal:  <span className="order-summary-values">N {itemsPrice}</span></p>
-                        <p>Dilivery Fee: <span className="order-summary-values">N {shippingPrice}</span></p>
-                        <p>Pack Price:  <span className="order-summary-values">N {taxPrice}</span></p>
+                        <p>Subtotal:  <span className="order-summary-values"><i class="fa-solid fa-naira-sign"></i>{itemsPrice}</span></p>
+                        <p>Dilivery Fee: <span className="order-summary-values"><i class="fa-solid fa-naira-sign"></i>{shippingPrice}</span></p>
+                        <p>Pack Price:  <span className="order-summary-values"><i class="fa-solid fa-naira-sign"></i>{taxPrice}</span></p>
 
                         <hr />
 
-                        <p>Total: <span className="order-summary-values">N {totalPrice}</span></p>
+                        <p>Total: <span className="order-summary-values"><i class="fa-solid fa-naira-sign"></i>{totalPrice}</span></p>
 
                         <hr />
 

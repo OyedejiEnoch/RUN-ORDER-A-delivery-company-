@@ -86,14 +86,15 @@ function ProductDetails() {
                                     <h2>N {product.price}</h2>
                                     <p>Status:  <span id="stock_status" className={product.stock > 0 ? "greenColor" : "redColor"}>{product.stock > 0 ? "In Stock" : "Out of Stock"}</span></p>
                                 </div>
-
-                                <h4>Currently Available only at : {product.seller}</h4>
+                                
+                                <h3><i className="fa-solid fa-exclamation fa-shake"></i></h3>
+                                <p> <span className="available">Currently Available only at   : {product.seller} </span></p>
 
                             </div>
 
                             <div className="productInput col-lg-6">
                                 <span onClick={decreaseQty}>-</span>
-                                <input type="number" className="form-control count" value={quantity} readOnly />
+                                <input type="number" className="form-control count d-inline" value={quantity} readOnly />
 
                                 <span onClick={increaseQty}>+</span>
 
@@ -124,43 +125,43 @@ export default ProductDetails
 
 
 
-// <h3>{product.name}</h3>
-// <p id="product_id">Product # {product._id}</p>
+{/* <h3>{product.name}</h3>
+<p id="product_id">Product # {product._id}</p>
 
-// <hr />
+<hr />
 
-// <div className="rating-outer">
-//     <div className="rating-inner" style={{ width: `${(product.rating / 5) * 100}%` }}></div>
-// </div>
-// <span id="no_of_reviews">({product.numOfReviews} Reviews)</span>
+<div className="rating-outer">
+    <div className="rating-inner" style={{ width: `${(product.rating / 5) * 100}%` }}></div>
+</div>
+<span id="no_of_reviews">({product.numOfReviews} Reviews)</span>
 
-// <hr />
+<hr />
 
-// <p id="product_price">N{product.price}</p>
-// <div className="stockCounter d-inline">
-//     <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
+<p id="product_price">N{product.price}</p>
+<div className="stockCounter d-inline">
+    <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
 
-//     <input type="number" className="form-control count d-inline" value={quantity} readOnly />
+    <input type="number" className="form-control count d-inline" value={quantity} readOnly />
 
-//     <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
-// </div>
-// <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4"
-//     disabled={product.stock === 0} onClick={addToCart}>Add to Cart</button>
+    <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
+</div>
+<button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4"
+    disabled={product.stock === 0} onClick={addToCart}>Add to Cart</button>
 
-// <hr />
+<hr />
 
-// <p>Status: <span id="stock_status" className={product.stock > 0 ? "greenColor" : "redColor"}>{product.stock > 0 ? "In Stock" : "Out of Stock"}</span></p>
+<p>Status: <span id="stock_status" className={product.stock > 0 ? "greenColor" : "redColor"}>{product.stock > 0 ? "In Stock" : "Out of Stock"}</span></p>
 
-// <hr />
+<hr />
 
-// <h4 className="mt-2">Description:</h4>
-// <p>{product.description}</p>
-// <hr />
-// <p id="product_seller mb-3">Sold by: <strong>{product.seller}</strong></p>
+<h4 className="mt-2">Description:</h4>
+<p>{product.description}</p>
+<hr />
+<p id="product_seller mb-3">Sold by: <strong>{product.seller}</strong></p> */}
 
-// {/* <button id="review_btn" type="button" className="btn btn-primary mt-4" data-toggle="modal" data-target="#ratingModal">
-//     Submit Your Review
-// </button> */}
+{/* <button id="review_btn" type="button" className="btn btn-primary mt-4" data-toggle="modal" data-target="#ratingModal">
+    Submit Your Review
+</button> */}
 
 // <div className="row mt-2 mb-5">
 //     <div className="rating w-50">

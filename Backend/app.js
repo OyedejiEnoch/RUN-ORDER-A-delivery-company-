@@ -14,12 +14,6 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 5
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(fileupload());
 
-//setting up cloudinarg config
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-})
 
 
 

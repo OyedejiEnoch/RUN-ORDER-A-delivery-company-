@@ -131,8 +131,26 @@ function UpdateProduct() {
         <Fragment>
             <MetaData title={"Update Products"} />
             <div className="row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            <div className="col-12 col-md-2">
+                    <div className="sideBar">
+                        <Sidebar />
+                     </div>
+                <div className="sideBarMenu">
+                    <button className="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i className="fa-solid fa-bars"></i></button>
+
+                 <div className="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div className="offcanvas-header">
+                     <h5 className="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                
+                    </div>
+                 <div className="offcanvas-body">
+                 <Sidebar />
+                 </div>
+            </div>
+
+            </div>
+
                 </div>
 
                 <div className="col-12 col-md-10">

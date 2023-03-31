@@ -27,11 +27,7 @@ function ListOrder() {
     function setOrders() {
         const data = {
             columns: [
-                {
-                    label: 'Order ID',
-                    field: 'id',
-                    sort: 'asc'
-                },
+            
                 {
                     label: 'Num of Items',
                     field: 'numOfItems',
@@ -58,7 +54,7 @@ function ListOrder() {
 
         orders.forEach(order => {
             data.rows.push({
-                id: order._id,
+               
                 numOfItems: order.orderItems.length,
                 amount: `${order.totalPrice}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')
@@ -84,9 +80,7 @@ function ListOrder() {
             {loading ? <Loader /> : (
                 <MDBDataTable
                     data={setOrders()}
-                    className="px-3"
-                    bordered
-                    striped
+                    className="px-3 productsTable"
                     hover
                 />
             )}

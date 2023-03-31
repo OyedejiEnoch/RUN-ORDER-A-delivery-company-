@@ -45,11 +45,7 @@ function UserList() {
     function setUsers() {
         const data = {
             columns: [
-                {
-                    label: 'User ID',
-                    field: 'id',
-                    sort: 'asc'
-                },
+
                 {
                     label: 'Name',
                     field: 'name',
@@ -60,11 +56,11 @@ function UserList() {
                     field: 'email',
                     sort: 'asc'
                 },
-                {
-                    label: 'Role',
-                    field: 'role',
-                    sort: 'asc'
-                },
+                // {
+                //     label: 'Role',
+                //     field: 'role',
+                //     sort: 'asc'
+                // },
                 {
                     label: 'Actions',
                     field: 'actions',
@@ -76,17 +72,16 @@ function UserList() {
 
         users.forEach(user => {
             data.rows.push({
-                id: user._id,
                 name: user.name,
                 email: user.email,
-                role: user.role,
+                // role: user.role,
 
                 actions: <Fragment>
-                    <Link to={`/admin/user/${user._id}`} className="btn btn-primary py-1 px-2">
+                    <Link to={`/admin/user/${user._id}`} style={{textDecoration:"none"}} className="py-1 px-2">
                         <i className="fa fa-pencil"></i>
                     </Link>
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteUserHandler(user._id)}>
-                        <i className="fa fa-trash"></i>
+                    <button style={{border:"none"}} className="py-1 px-2 ml-2" onClick={() => deleteUserHandler(user._id)}>
+                    <i style={{color:"red"}} className="fa-sharp fa-solid fa-trash"></i>
                     </button>
                 </Fragment>
             })
@@ -101,8 +96,26 @@ function UserList() {
         <Fragment>
             <MetaData title={"All Users"} />
             <div className="row">
-                <div className="col-12 col-md-2">
-                    <Sidebar />
+            <div className="col-12 col-md-2">
+                    <div className="sideBar">
+                        <Sidebar />
+                     </div>
+                <div className="sideBarMenu">
+                    <button className="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i className="fa-solid fa-bars"></i></button>
+
+                 <div className="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div className="offcanvas-header">
+                     <h5 className="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                
+                    </div>
+                 <div className="offcanvas-body">
+                 <Sidebar />
+                 </div>
+            </div>
+
+            </div>
+
                 </div>
 
                 <div className="col-12 col-md-10">
@@ -112,9 +125,7 @@ function UserList() {
                         {loading ? <Loader /> : (
                             <MDBDataTable
                                 data={setUsers()}
-                                className="px-3"
-                                bordered
-                                striped
+                                className="px-3 productsTable"
                                 hover
                             />
                         )}

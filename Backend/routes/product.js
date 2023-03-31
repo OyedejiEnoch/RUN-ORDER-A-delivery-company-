@@ -12,10 +12,10 @@ router.route("/products").get(getProducts);
 router.route("/admin/products").get(getAdminProducts);
 router.route("/products/:id").get(getSingleProduct);
 
-router.route("/admin/product/new").post(isAunthenticatedUser, authorizedRoles("admin", "agents"), newProduct);
+router.route("/admin/product/new").post(isAunthenticatedUser, authorizedRoles("admin", "team"), newProduct);
 router.route("/admin/products/:id")
-    .put(isAunthenticatedUser, authorizedRoles("admin"), updateProduct)
-    .delete(isAunthenticatedUser, authorizedRoles("admin"), deleteProduct);
+    .put(isAunthenticatedUser, authorizedRoles("admin", "team"), updateProduct)
+    .delete(isAunthenticatedUser, authorizedRoles("admin",  "team"), deleteProduct);
 
 
 router.route("/review").put(isAunthenticatedUser, createProductReview)

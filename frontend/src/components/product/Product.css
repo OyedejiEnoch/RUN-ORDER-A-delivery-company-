@@ -68,6 +68,9 @@
     top: 5px;
 }
 
+.productCart {
+    color: #AA77ff;
+}
 
 @media (max-width: 550px) {
     .body {

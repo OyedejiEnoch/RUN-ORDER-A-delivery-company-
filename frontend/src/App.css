@@ -487,12 +487,12 @@ footer {
 
 /* Pagination */
 .page-item.active .page-link {
-    background-color: #fa9c23;
-    border-color: #fa9c23;
+    background-color: #0d0346;
+    border-color: #040c3a;
 }
 
 .page-link {
-    color: #fa9c23;
+    color: #202020;
 }
 
 .page-link:hover {
@@ -503,11 +503,11 @@ footer {
 
 .sidebar-wrapper {
     display: flex;
-    width: 100%;
+    width: 80%;
     align-items: stretch;
     min-height: 100vh;
+    font-size: 14px;
     font-weight: normal;
-
     margin-top: 0;
     height: 100%;
     left: 0;
@@ -518,19 +518,12 @@ footer {
 #sidebar {
     min-width: 100%;
     max-width: 100%;
-    background: #232f3e;
+    background: #190130;
     color: #fff;
     transition: all 0.3s;
 }
 
-#sidebar.active {
-    margin-left: -250px;
-}
 
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #232f3e;
-}
 
 #sidebar ul.components {
     padding: 5px 0px;
@@ -564,31 +557,7 @@ a[data-toggle='collapse'] {
     position: relative;
 }
 
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
 
-ul ul a {
-    font-size: 1rem !important;
-    padding-left: 30px !important;
-    background: #232f3e;
-}
-
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
 
 /* Products List Admin */
 #products_table .btn {
@@ -602,8 +571,79 @@ ul.CTAs a {
     font-size: 1.5rem;
 }
 
-.dashbordBg {
-    background-color: #645CBB;
+.dashbordBox{
+    color:black;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Reviews */
+.dashbordBg {
+    background-color: #AA77ff;
+    color:#ffffff;
+    font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+   
+}
+
+.dashbordBg i{
+    height: 10px;
+}
+
+.barChart{
+    width:200px;
+    height:200px;
+    display: flex;
+    align-items:center;
+    flex-direction:column;
+    margin-top: 20px;
+    justify-content:center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.barChart p{
+    margin-left:40px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.productsTable{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.sideBarMenu{
+    display: none;
+}
+.sideBarMenu button{
+    font-size: 20px;
+}
+
+.offcanvas {
+    color: #fff;
+    background-color:#190130 ;
+}
+.offcanvas .btn-close{
+    color: #fff;
+   
+}
+
+
+@media (max-width: 550px) {
+
+    .dashbord{
+        padding: 0 30px;
+    }
+
+    .sideBar{
+        display: none;
+    }
+
+    .sideBarMenu{
+        display: block;
+    }
+
+}

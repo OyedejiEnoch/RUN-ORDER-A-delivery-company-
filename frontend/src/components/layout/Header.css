@@ -125,7 +125,32 @@
 
 
 }
+/* .options1 {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    padding: 20px;
+    
+    border-radius: 10px;
 
+    display: flex;
+    flex-direction: column;
+    color:white;
+    gap: 20px;
+    width: 180px;
+    font-weight: 500;
+
+
+}
+
+.options1 Link{
+    color: #fff;
+}
+
+.offcanvas-end{
+    height: 300px;
+    background-color: #2e2e2e;
+} */
 
 @media (max-width: 550px) {
 

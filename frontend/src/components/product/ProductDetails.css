@@ -80,6 +80,7 @@ h4 {
     align-items: center;
     justify-content: center;
     display: flex;
+    width: 30%;
 
 }
 
@@ -167,10 +168,26 @@ h4 {
     margin-top: 9rem;
 }
 
+.fa-exclamation{
+    color: red;
+    margin: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+p .available{
+    font-weight: 600;
+    color: black;
+}
 
 
 @media (max-width:550px) {
     .productDetails {
         padding: 0 25px;
+    }
+    .productInput input {
+        width: 10%;
+    
     }
 }

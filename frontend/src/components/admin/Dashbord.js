@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAdminProducts } from "../../action/productAction";
 import { allOrders } from "../../action/orderActions";
 import { allUsers } from "../../action/userActions";
+import { CircularProgressbar,buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 
 
@@ -16,6 +18,7 @@ function Dashboard() {
     const dispatch = useDispatch();
 
     const { products } = useSelector(state => state.products)
+    const { user } = useSelector(state => state.auth)
     const { users } = useSelector(state => state.allUsers)
     const { orders, totalAmount, loading } = useSelector(state => state.allOrders)
 
@@ -32,87 +35,123 @@ function Dashboard() {
 
     }, [dispatch])
 
+    const value=(users.length / 10000) *100 
 
     return (
         <Fragment>
 
             <div className="row">
                 <div className="col-12 col-md-2">
-                    <Sidebar />
+                    <div className="sideBar">
+                        <Sidebar />
+                     </div>
+                <div className="sideBarMenu">
+                    <button className="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i className="fa-solid fa-bars"></i></button>
+
+                 <div className="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div className="offcanvas-header">
+                     <p className="adminName">Welcome <i class="fa-solid fa-hand-wave fa-beat-fade"></i> <span>{user && user.name} </span></p>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                
+                    </div>
+                 <div className="offcanvas-body">
+                 <Sidebar />
+                 </div>
+            </div>
+
+            </div>
+
                 </div>
 
-                <div className="col-12 col-md-10">
+    
+
+
+
+                <div className="col-12 col-md-10 dashbord">
                     <h1 className="my-4">Dashboard</h1>
 
                     {loading ? <Loader /> : (
                         <Fragment>
                             <MetaData title={"Admin Dashbord"} />
 
+                         
+
                             <div className="row pr-4">
-                                <div className="col-xl-12 col-sm-12 mb-3 ">
-                                    <div className="card text-white  o-hidden h-100 dashbordBg">
+                                <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
                                         <div className="card-body">
-                                            <div className="text-center card-font-size">Total Amount<br /> <b>N {totalAmount && totalAmount.toFixed(2)}</b>
+                                            <div className="text-center ">Products<br /> <i className="fa-solid fa-cart-shopping"></i>  <b>{products && products.length}</b></div>
+                                        </div>
+                                        <Link className="card-footer learfix small z-1" to="/admin/products">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+
+
+                                <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">Orders<br /> <i className="fa-solid fa-cart-shopping"></i> <b>{orders && orders.length}</b></div>
+                                        </div>
+                                        <Link className="card-footer clearfix small z-1" to="/admin/orders">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                                {user && user.role === "admin" &&
+                                (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">Users<br /> <i className="fa-solid fa-users"></i> <b>{users && users.length}</b></div>
+                                        </div>
+                                        <Link className="card-footer learfix small z-1" to="/admin/users">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>) }
+
+                                 {user && user.role === "admin" &&
+                                (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">Out of Stock<br /> <b>{outOfStock}</b></div>
+                                        </div>
+                                    </div>
+                                </div>)}
+                            </div>
+
+                            {user && user.role === "admin" &&
+                            (<div className="row pr-4">
+                                <div className="col-xl-12 col-sm-12 mb-3 ">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">Total Amount<br /> <b>N {totalAmount && totalAmount.toFixed(2)}</b>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>)  }
 
-                            <div className="row pr-4">
-                                <div className="col-xl-3 col-sm-6 mb-3">
-                                    <div className="card text-white  o-hidden h-100 dashbordBg">
-                                        <div className="card-body">
-                                            <div className="text-center card-font-size">Products<br /> <b>{products && products.length}</b></div>
-                                        </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/admin/products">
-                                            <span className="float-left">View Details</span>
-                                            <span className="float-right">
-                                                <i className="fa fa-angle-right"></i>
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
+                        <div className="barChart">
+                        
+                        <CircularProgressbar value={value} maxValue={100} text={`${value}%`}  styles={buildStyles({
+                            textSize: '14px',
+                            strokeWidth:"7",
+                        })}/>;
+                        <p>Percentage of users registered</p>
+                        </div>
 
-
-                                <div className="col-xl-3 col-sm-6 mb-3">
-                                    <div className="card text-white  o-hidden h-100 dashbordBg">
-                                        <div className="card-body">
-                                            <div className="text-center card-font-size">Orders<br /> <b>{orders && orders.length}</b></div>
-                                        </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/admin/orders">
-                                            <span className="float-left">View Details</span>
-                                            <span className="float-right">
-                                                <i className="fa fa-angle-right"></i>
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
-
-
-                                <div className="col-xl-3 col-sm-6 mb-3">
-                                    <div className="card text-white  o-hidden h-100 dashbordBg">
-                                        <div className="card-body">
-                                            <div className="text-center card-font-size">Users<br /> <b>{users && users.length}</b></div>
-                                        </div>
-                                        <Link className="card-footer text-white clearfix small z-1" to="/admin/users">
-                                            <span className="float-left">View Details</span>
-                                            <span className="float-right">
-                                                <i className="fa fa-angle-right"></i>
-                                            </span>
-                                        </Link>
-                                    </div>
-                                </div>
-
-
-                                <div className="col-xl-3 col-sm-6 mb-3">
-                                    <div className="card text-white  o-hidden h-100 dashbordBg">
-                                        <div className="card-body">
-                                            <div className="text-center card-font-size">Out of Stock<br /> <b>{outOfStock}</b></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                         </Fragment>
                     )}

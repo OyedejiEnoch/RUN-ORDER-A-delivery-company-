@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import 'animate.css';
 import { Link } from "react-router-dom";
+import "./LandingPage.css"
+import { Carousel } from "react-bootstrap";
 import Body from "./Body";
 
 
@@ -28,6 +30,36 @@ function LandingPage() {
                 </div>
 
             </div>
+
+           {/* <section className="descSection">
+           <Carousel pause="hover">
+                 
+                    <Carousel.Item className="carousel">
+                     <div className="description">
+                        <img src="./images/undraw_takeout_boxes_ap54.svg" />
+                        <p>Fast delivery</p>
+                     </div>
+                     <div className="description">
+                        <img src="./images/undraw_takeout_boxes_ap54.svg" />
+                        <p>Fast delivery</p>
+                     </div>
+                </Carousel.Item>
+                   
+                    <Carousel.Item>
+                     <div className="description">
+                        <img src="./images/undraw_takeout_boxes_ap54.svg" />
+                        <p>Fast delivery</p>
+                     </div>
+                </Carousel.Item>
+                    <Carousel.Item>
+                     <div className="description">
+                        <img src="./images/undraw_takeout_boxes_ap54.svg" />
+                        <p>Fast delivery</p>
+                     </div>
+                </Carousel.Item>
+                    
+                </Carousel>
+           </section> */}
 
 
 
