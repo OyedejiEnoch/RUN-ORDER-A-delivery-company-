@@ -4,7 +4,7 @@ import Product from "./product/Product";
 import { useDispatch, useSelector } from "react-redux"
 import { getProducts } from "../action/productAction"
 import Loader from "./layout/Loader";
-import { toast, ToastContainer, } from "react-toastify"
+import { toast, } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import Pagination from "react-js-pagination"
 import { useParams } from "react-router-dom";

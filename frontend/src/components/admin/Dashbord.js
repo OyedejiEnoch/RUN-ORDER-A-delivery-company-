@@ -20,6 +20,7 @@ function Dashboard() {
     const { products } = useSelector(state => state.products)
     const { user } = useSelector(state => state.auth)
     const { users } = useSelector(state => state.allUsers)
+    const { agents, agentsCount} = useSelector(state => state.allAgentsOrderFrom)
     const { orders, totalAmount, loading } = useSelector(state => state.allOrders)
 
     let outOfStock = 0;
@@ -129,6 +130,7 @@ function Dashboard() {
                                         </div>
                                     </div>
                                 </div>)}
+
                             </div>
 
                             {user && user.role === "admin" &&
@@ -142,6 +144,31 @@ function Dashboard() {
                                     </div>
                                 </div>
                             </div>)  }
+
+
+
+                        <div className="row pr-4">
+
+                            <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">AgentsOrders<br /> <i className="fa-solid fa-cart-shopping"></i> <b>{agentsCount && agentsCount}</b></div>
+                                        </div>
+                                        <Link className="card-footer clearfix small z-1" to="/admin/agentsForm">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+
+
+
+
 
                         <div className="barChart">
                         

@@ -6,6 +6,7 @@ import { productsReducer, productDetailsReducer, newProductReducer, productReduc
 import { authReducer, userReducer, forgotPasswordReducer, allUsersReducer, userDetailsReducer } from "./reducers/userReducers";
 import { cartReducer } from "./reducers/cartReducers";
 import { newOrderReducer, myOrdersReducer, orderDetailsReducer, allOrderReducer, orderReducer } from "./reducers/orderReducers"
+import { agentsFormReducer, newAgentFormReducer,agentReducer} from "./reducers/agentsFormReducers"
 
 
 const rootReducer = combineReducers({
@@ -23,7 +24,11 @@ const rootReducer = combineReducers({
     newProduct: newProductReducer,
     product: productReducer,
     allOrders: allOrderReducer,
-    order: orderReducer
+    order: orderReducer,
+
+    allAgentsOrderFrom: agentsFormReducer,
+    newAgentForm: newAgentFormReducer,
+    agent:agentReducer
 
 })
 

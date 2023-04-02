@@ -12,6 +12,7 @@ import Sidebar from "./Sidebar";
 import "./ProcessOrder.css"
 
 import { UPDATE_0RDERS_RESET } from "../../constants/orderConstants";
+import AgentOrderForm from "./AgentOrderForm";
 
 
 function ProcessOrder() {
@@ -26,7 +27,6 @@ function ProcessOrder() {
     const { error, isUpdated } = useSelector(state => state.order)
 
     const orderId = params.id
-
 
 
     useEffect(() => {
@@ -45,7 +45,6 @@ function ProcessOrder() {
         }
 
     }, [dispatch, error, isUpdated, orderId])
-
 
 
 
@@ -91,7 +90,7 @@ function ProcessOrder() {
                     <Fragment>
                         {loading ? <Loader /> : (
                             <div className="row d-flex justify-content-around processOrderPage">
-                                <div className="col-12 col-lg-7 order-details">
+                                <div className="col-12 col-lg-6 order-details">
 
                                     <h2 className="my-5">Order # {order._id}</h2>
 
@@ -134,7 +133,7 @@ function ProcessOrder() {
                                     <hr />
                                 </div>
 
-                                <div className="col-12 col-lg-3 mt-5 updateOrder">
+                                <div className="col-12 col-lg-4 mt-5 updateOrder">
                                     <h4 className="my-4">Status</h4>
 
                                     <div className="form-group">
@@ -145,7 +144,6 @@ function ProcessOrder() {
                                             onChange={(e) => setStatus(e.target.value)}
                                         >
                                             <option value="Processing">Processing</option>
-                                            
                                             <option value="Shipped"> Shipped </option>
                                             <option value="Delivered">Delivered</option>
                                         </select>
@@ -154,9 +152,13 @@ function ProcessOrder() {
                                     <button className=" btn-block mt-10" onClick={() => updateOrderHandler(order._id)}>
                                         Update Status
                                     </button>
-                                </div>
 
-                            </div>
+                                    <div className="agentForm">
+                                        <AgentOrderForm />        
+                                    </div>
+                  </div>
+
+                    </div>
                         )}
                     </Fragment>
                 </div>

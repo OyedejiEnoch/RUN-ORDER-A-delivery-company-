@@ -33,6 +33,9 @@ function Sidebar() {
                     <li>
                         <Link to="/admin/users"><i className="fa fa-users"></i> Users</Link>
                     </li>
+                    <li>
+                        <Link to="/admin/agentsForm"><i className="fa fa-users"></i> AgentsForm</Link>
+                    </li>
 
                 </ul>
             </nav>

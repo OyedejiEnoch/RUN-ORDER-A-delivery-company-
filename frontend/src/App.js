@@ -41,6 +41,7 @@ import OrderList from './components/admin/OrdersList';
 import ProcessOrders from './components/admin/ProcessOrders';
 import UsersList from './components/admin/UsersList';
 import UpdateUser from './components/admin/UpdateUser';
+import AgentsForm from './components/admin/AgentsForm';
 
 // import { useEffect } from 'react';
 
@@ -113,7 +114,10 @@ function App() {
           <Route path='/admin/users' element={<ProtectedRoute isAdmin={true} ><UsersList /></ProtectedRoute>} exact />
           <Route path='/admin/user/:id' element={<ProtectedRoute isAdmin={true} ><UpdateUser /></ProtectedRoute>} exact />
 
+          <Route path='/admin/agentsForm' element={<ProtectedRoute isAdmin={true} ><AgentsForm /></ProtectedRoute>} exact />
+
         </Routes>
+
 
         <Footer />
 

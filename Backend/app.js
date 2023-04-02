@@ -21,12 +21,14 @@ app.use(fileupload());
 const products = require("./routes/product")
 const authUsers = require("./routes/authUser")
 const order = require("./routes/order")
+const agentsForm = require("./routes/agentForm")
 
 
 app.use("/api/v1", products)
 
 app.use("/api/v1", authUsers)
 app.use("/api/v1", order)
+app.use("/api/v1", agentsForm)
 
 //middleWare to handle errors
 app.use(errorMiddleWares)
