@@ -43,6 +43,12 @@ import UsersList from './components/admin/UsersList';
 import UpdateUser from './components/admin/UpdateUser';
 import AgentsForm from './components/admin/AgentsForm';
 
+
+import MannerForm from './components/admin/MannerForm';
+import NumbersForm from './components/admin/NumbersForm';
+import DoublePortionForm from './components/admin/DoublePortionForm';
+
+
 // import { useEffect } from 'react';
 
 
@@ -58,15 +64,15 @@ function App() {
     <Router>
       <div>
         <ToastContainer position="bottom-center"
-          autoClose={5000}
-          hideProgressBar={false}
+          autoClose={4000}
+          hideProgressBar={true}
           newestOnTop={false}
           closeOnClick
           rtl={false}
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme="dark" />
+          theme="light" />
 
         <Header />
         <Routes>
@@ -115,6 +121,9 @@ function App() {
           <Route path='/admin/user/:id' element={<ProtectedRoute isAdmin={true} ><UpdateUser /></ProtectedRoute>} exact />
 
           <Route path='/admin/agentsForm' element={<ProtectedRoute isAdmin={true} ><AgentsForm /></ProtectedRoute>} exact />
+          <Route path='/admin/mannerPalaceForm' element={<ProtectedRoute isAdmin={true} ><MannerForm /></ProtectedRoute>} exact />
+          <Route path='/admin/numbersForm' element={<ProtectedRoute isAdmin={true} ><NumbersForm /></ProtectedRoute>} exact />
+          <Route path='/admin/doublePortion' element={<ProtectedRoute isAdmin={true} ><DoublePortionForm /></ProtectedRoute>} exact />
 
         </Routes>
 

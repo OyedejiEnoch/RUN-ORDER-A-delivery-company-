@@ -22,6 +22,10 @@ const products = require("./routes/product")
 const authUsers = require("./routes/authUser")
 const order = require("./routes/order")
 const agentsForm = require("./routes/agentForm")
+const nationalKitchen = require("./routes/nationalKitchen")
+const mannerPalace = require("./routes/mannerPalace")
+const doublePortion = require("./routes/doublePortion")
+const numbers = require("./routes/numbers")
 
 
 app.use("/api/v1", products)
@@ -29,6 +33,10 @@ app.use("/api/v1", products)
 app.use("/api/v1", authUsers)
 app.use("/api/v1", order)
 app.use("/api/v1", agentsForm)
+app.use("/api/v1", nationalKitchen)
+app.use("/api/v1", mannerPalace)
+app.use("/api/v1", doublePortion)
+app.use("/api/v1", numbers)
 
 //middleWare to handle errors
 app.use(errorMiddleWares)

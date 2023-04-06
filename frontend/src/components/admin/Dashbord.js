@@ -21,6 +21,9 @@ function Dashboard() {
     const { user } = useSelector(state => state.auth)
     const { users } = useSelector(state => state.allUsers)
     const { agents, agentsCount} = useSelector(state => state.allAgentsOrderFrom)
+    const { totalAmount:amount} = useSelector(state => state.allCafeteriaForm)
+    const { numberstotalAmount:NumbersAmount} = useSelector(state => state.allNumbersCafeteriaForm)
+    const { dptotalAmount} = useSelector(state => state.allDpCafeteriaForm)
     const { orders, totalAmount, loading } = useSelector(state => state.allOrders)
 
     let outOfStock = 0;
@@ -155,6 +158,47 @@ function Dashboard() {
                                             <div className="text-center ">AgentsOrders<br /> <i className="fa-solid fa-cart-shopping"></i> <b>{agentsCount && agentsCount}</b></div>
                                         </div>
                                         <Link className="card-footer clearfix small z-1" to="/admin/agentsForm">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                            <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">MannerPalace<br /> <i className="fa-solid fa-naira-sign"></i> <b>{ amount}</b></div>
+                                        </div>
+                                        <Link className="card-footer clearfix small z-1" to="/admin/mannerPalaceForm">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+                            <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">Numbers<br /> <i className="fa-solid fa-naira-sign"></i> <b>{NumbersAmount}</b></div>
+                                        </div>
+                                        <Link className="card-footer clearfix small z-1" to="/admin/numbersForm">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                            <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">DoublePortion<br /> <i className="fa-solid fa-naira-sign"></i> <b>{dptotalAmount}</b></div>
+                                        </div>
+                                        <Link className="card-footer clearfix small z-1" to="/admin/doublePortion">
                                             <span className="float-left">View Details</span>
                                             <span className="float-right">
                                                 <i className="fa fa-angle-right"></i>

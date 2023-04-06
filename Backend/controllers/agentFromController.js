@@ -29,14 +29,13 @@ exports.allAgentForm = catchAsyncErrors(async(req, res, next)=>{
     const agents = await apiFeatures.query;
     
 
-    setTimeout(() => {
         res.status(200).json({
             success: true,
             agentsCount,
             resPerPage,
             agents
         })
-    }, 2000);
+  
 });
 
 // to delete an agent order form

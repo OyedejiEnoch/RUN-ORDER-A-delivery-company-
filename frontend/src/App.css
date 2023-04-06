@@ -636,15 +636,20 @@ a[data-toggle='collapse'] {
     align-items: center;
     margin-top: 20px;
     gap: 20px;
+    
+    /* columns: 2; */
+    flex-wrap: wrap; 
 }
 
 .agentsFormDisplay{
     padding: 20px;
+    position: relative;
     width: 250px;
     height: 150px;
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    color: black;    
+    color: black; 
+      
 }
 .agentsFormText h2{
     font-size: 14px;
@@ -658,9 +663,9 @@ a[data-toggle='collapse'] {
 .agentsFormText button{
     display: flex;
     align-items: end;
-    position: relative;
-    bottom: 20px;
-    left: 140px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
     
 }
 
@@ -668,8 +673,37 @@ a[data-toggle='collapse'] {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+    flex-direction: column;
     font-size: 16px;
     margin-top: 10px;
+}
+
+.agentsCount h1{
+    font-size: 14px;
+    color: rgb(105, 105, 105);
+}
+.agentsCount span{
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+}
+
+.cafeteriaFormFill{
+    width: 300px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.cafeteriaFormFill .form-group{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+        
+}
+.cafeteriaFormFill button{
+    display: block;
+    border-color: #AA77ff ;
+   background-color: #AA77ff;
+     
 }
 
 
@@ -696,4 +730,7 @@ a[data-toggle='collapse'] {
         color: black;    
     }
 
+    .agentsForm{
+       flex-direction: column;
+    }
 }

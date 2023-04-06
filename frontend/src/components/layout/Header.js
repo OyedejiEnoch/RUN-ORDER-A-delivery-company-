@@ -44,7 +44,7 @@ function Header() {
                             <div className="navbarCart">
 
                                 <p>Cart</p>
-                                <a href=""><i className="fa-solid fa-cart-shopping"></i></a>
+                                <p ><i className="fa-solid fa-cart-shopping"></i></p>
                                 <span>{cartItems?.length}</span>
 
 
@@ -59,8 +59,8 @@ function Header() {
                                     <div className="navbarUserProfile">
                                         <img onClick={() => setOpen(!open)} src={user.avatar ? user.avatar.url : "./images/undraw_pic_profile_re_7g2h.svg"} alt={user && user.name} />
                                         <p className="userName" onClick={() => setOpen(!open)}>{user && user.name}</p>
-                                        <a onClick={() => setOpen(!open)}><i className="fa-solid fa-angle-down"></i></a>
-                                        <a onClick={() => setOpen(!open)}><i className="fa-solid fa-bars"></i></a>
+                                        <span onClick={() => setOpen(!open)}><i className="fa-solid fa-angle-down"></i></span>
+                                        <span onClick={() => setOpen(!open)}><i className="fa-solid fa-bars"></i></span>
                                     </div>
 
                                 ) : !loading && <Link to="/login" id="login_btn" className="link">Login/ Register</Link>}

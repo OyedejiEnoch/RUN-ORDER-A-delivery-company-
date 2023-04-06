@@ -10,7 +10,7 @@ function Footer() {
             <footer>
                 <div className="container-fluid footer">
                     <div className="row footerContent">
-                        <div class="col-lg-4 col-md-6 col-sm-12 about ">
+                        <div className="col-lg-4 col-md-6 col-sm-12 about ">
                             <h1>About Run Order</h1>
                             <hr></hr>
                             <p>Run Order is an ordering delivery service in the Redeemers University, which offers
@@ -19,8 +19,8 @@ function Footer() {
 
                         <div class="col-lg-4 col-md-6 col-sm-12 social">
                             <h1>Follow us on </h1>
-                            <a><i class="fa-brands fa-instagram"></i> </a>
-                            <a><i class="fa-brands fa-twitter"></i></a>
+                            <a><i className="fa-brands fa-instagram"></i> </a>
+                            <a><i className="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
 

@@ -7,6 +7,10 @@ import { authReducer, userReducer, forgotPasswordReducer, allUsersReducer, userD
 import { cartReducer } from "./reducers/cartReducers";
 import { newOrderReducer, myOrdersReducer, orderDetailsReducer, allOrderReducer, orderReducer } from "./reducers/orderReducers"
 import { agentsFormReducer, newAgentFormReducer,agentReducer} from "./reducers/agentsFormReducers"
+import {newCafeteriaFormReducer, cafeteriaFormReducer, cafeteriaReducer} from "./reducers/mannerReducers"
+import { newNumbersCafeteriaFormReducer, numbersCafeteriaFormReducer, numbersCafeteriaReducer} from "./reducers/numbersReducers"
+import {dpCafeteriaFormReducer, dpNewCafeteriaFormReducer, dpCafeteriaReducer} from "./reducers/doublePortionReducers"
+
 
 
 const rootReducer = combineReducers({
@@ -28,8 +32,20 @@ const rootReducer = combineReducers({
 
     allAgentsOrderFrom: agentsFormReducer,
     newAgentForm: newAgentFormReducer,
-    agent:agentReducer
+    agent:agentReducer,
 
+    newCafeteria: newCafeteriaFormReducer,
+    allCafeteriaForm: cafeteriaFormReducer,
+    cafeteria:cafeteriaReducer,
+
+    numbersCafeteria: newNumbersCafeteriaFormReducer,
+    allNumbersCafeteriaForm: numbersCafeteriaFormReducer,
+    numbers:numbersCafeteriaReducer,
+
+
+    dpCafeteria: dpNewCafeteriaFormReducer,
+    allDpCafeteriaForm: dpCafeteriaFormReducer,
+    doublePortion:dpCafeteriaReducer
 })
 
 

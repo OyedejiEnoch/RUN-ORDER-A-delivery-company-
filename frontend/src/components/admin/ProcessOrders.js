@@ -144,7 +144,7 @@ function ProcessOrder() {
                                             onChange={(e) => setStatus(e.target.value)}
                                         >
                                             <option value="Processing">Processing</option>
-                                            <option value="Shipped"> Shipped </option>
+                                            <option value="Shipped"> Accepted</option>
                                             <option value="Delivered">Delivered</option>
                                         </select>
                                     </div>

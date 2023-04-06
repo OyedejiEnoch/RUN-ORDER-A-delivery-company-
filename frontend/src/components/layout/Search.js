@@ -28,16 +28,16 @@ function Search() {
     return (
 
         <form onSubmit={searchHandler}>
-            <div class="input-group search">
+            <div className="input-group search">
                 <input
                     type="text"
                     id="search_field"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Enter Product Name ..."
                     onChange={handleChange}
                     value={keyword}
                 />
-                <div class="input-group-append">
+                <div className="input-group-append">
                     <button id="search_btn" className="btn">
                         <i className="fa fa-search" aria-hidden="true"></i>
                     </button>

@@ -15,6 +15,7 @@ const AgentOrderForm = () => {
     const dispatch = useDispatch()
     let navigate = useNavigate()
 
+  
     const { loading, error, success } = useSelector(state => state.newAgentForm);
 
     useEffect(() => {
@@ -26,8 +27,8 @@ const AgentOrderForm = () => {
         }
 
         if (success) {
-            navigate("/admin/orders")
-            toast.success("Order picked by you")
+            // navigate(`/admin/order/${orders._id}`)
+            toast.success("Order picked by you, Do RFRESH the page")
             dispatch({ type: NEW_AGENTSORDER_REQUEST })
         }
     }, [dispatch, error, success])
@@ -66,16 +67,28 @@ const AgentOrderForm = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="Resturants">Cafeteria</label>
-                            <input
-                                type="name"
-                                id="Resturants"
+                            <label htmlFor="cafeteria_field">Cafeteria</label>
+                            <select
+                                id="cafeteria_field"
                                 className="form-control"
-                                name='email'
                                 value={cafeteria}
                                 onChange={(e) => setCafeteria(e.target.value)}
-                            />
+                                required
+                            >
+
+
+                                <option >Select.. </option>
+                                <option >Manner Palace </option>
+                                <option >Double Portion </option>
+                                <option >National Kitchen</option>
+                                <option >Mimies</option>
+                                <option >Divine Hands</option>
+
+
+                            </select>
                         </div>
+
+
                         <div className="form-group">
                             <label htmlFor="Customer">Name of Customer</label>
                             <input
@@ -99,7 +112,7 @@ const AgentOrderForm = () => {
                             />
                         </div>
 
-                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3"
+                        <button type="submit" className="btn btn-block mt-4 mb-3"
                             disabled={loading ? true : false} >Update</button>
                     </form>
 

@@ -2,13 +2,15 @@ import React, { Fragment, useState, useEffect, } from "react";
 import Sidebar from "./Sidebar";
 
 import MetaData from "../layout/MetaData";
-import {getAgentsForm} from "../../action/agentOrderForm"
+import {getCafeteriaForm} from "../../action/mannerPalaceActions"
 import { useDispatch, useSelector } from "react-redux"
 import Loader from "../layout/Loader";
 import { toast, } from "react-toastify"
 import Pagination from "react-js-pagination"
 import { useParams } from "react-router-dom";
-import AgentsDisplayForm from "../formsDisplay/AgentsDisplayForm";
+import MannerPalaceForm from "../formsDisplay/MannerPalaceForm";
+import MannerForm from "../forms/MannerForm";
+
 
 const AgentsForm = () => {
 
@@ -18,7 +20,7 @@ const AgentsForm = () => {
 
     const dispatch = useDispatch()
 
-    const { loading, agents, error, agentsCount, resPerPage } = useSelector(state => state.allAgentsOrderFrom)
+    const { loading, cafeteriaForms, error, formsCount, totalAmount ,resPerPage } = useSelector(state => state.allCafeteriaForm)
 
     // const keyword = params.keyword
 
@@ -30,7 +32,7 @@ const AgentsForm = () => {
 
         }
         // price
-        dispatch(getAgentsForm( currentPage));
+        dispatch(getCafeteriaForm( currentPage));
 
 
         // price
@@ -71,25 +73,30 @@ const AgentsForm = () => {
 
             <div className="col-12 col-md-10">
                 <div className="agentsCount">
-                <h1>Total Orders taken: {agentsCount}</h1>
+                <h2>Manner Palace</h2>
+                <h1>Total Orders taken: <span>{formsCount} </span> </h1>
+                <h1>Total Amount:<span><i className="fa-solid fa-naira-sign"></i>{totalAmount}</span> </h1>
+
+               <MannerForm />
                 </div>
 
                 {loading ? <Loader /> : (
-                <div className="agentsForm">
+                <div className="agentsForm ">
                 
-                {agents && agents.map(agent => (
-                    <AgentsDisplayForm key={agent._id} agents={agent} />
+                {cafeteriaForms && cafeteriaForms.map(form => (
+                
+                    <MannerPalaceForm key={form._id} forms={form} />
                     ))}
                 </div>)}
             </div>
+                
 
-
-            {resPerPage <= agentsCount && (
+            {resPerPage <= formsCount && (
                 <div className="d-flex justify-content-center mt-5" >
                     <Pagination
                         activePage={currentPage}
                         itemsCountPerPage={resPerPage}
-                        totalItemsCount={agentsCount}
+                        totalItemsCount={formsCount}
                         onChange={setCurrentPageNo}
                         nextPageText={"Next"}
                         prevPageText={"Prev"}
