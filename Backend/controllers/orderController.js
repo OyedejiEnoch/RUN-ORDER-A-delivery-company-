@@ -96,8 +96,8 @@ exports.allOrdersWithoutAmount = catchAsyncErrors(async (req, res, next) => {
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id)
 
-    if (order.orderStatus === 'Delivered') {
-        return next(new ErrorHandler('You have already delivered this order', 400))
+    if (order.orderStatus === 'Accepted') {
+        return next(new ErrorHandler('This Order Has already being Accepted', 400))
     }
  
 

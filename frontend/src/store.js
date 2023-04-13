@@ -10,7 +10,9 @@ import { agentsFormReducer, newAgentFormReducer,agentReducer} from "./reducers/a
 import {newCafeteriaFormReducer, cafeteriaFormReducer, cafeteriaReducer} from "./reducers/mannerReducers"
 import { newNumbersCafeteriaFormReducer, numbersCafeteriaFormReducer, numbersCafeteriaReducer} from "./reducers/numbersReducers"
 import {dpCafeteriaFormReducer, dpNewCafeteriaFormReducer, dpCafeteriaReducer} from "./reducers/doublePortionReducers"
-
+import {newNkFormReducer, nkFormReducer, nkReducer} from "./reducers/nationalKitchenReducers"
+import {mimiesFormReducer, mimiesReducer, newMimiesFormReducer} from "./reducers/mimiesReducers"
+import {newDivineHandsFormReducer, divineHandsFormReducer, divineHandsReducer } from "./reducers/divineHandsReducers"
 
 
 const rootReducer = combineReducers({
@@ -45,7 +47,19 @@ const rootReducer = combineReducers({
 
     dpCafeteria: dpNewCafeteriaFormReducer,
     allDpCafeteriaForm: dpCafeteriaFormReducer,
-    doublePortion:dpCafeteriaReducer
+    doublePortion:dpCafeteriaReducer,
+
+    nkCafeteria: newNkFormReducer,
+    allNkCafeteriaForm:nkFormReducer,
+    nationalKitchen:nkReducer,
+
+    mimiesCafeteria: newMimiesFormReducer,
+    allMimiesCafeteriaForm:mimiesFormReducer,
+    mimies:mimiesReducer,
+
+    divineHandsCafeteria: newDivineHandsFormReducer,
+    allDivineCafeteriaForm: divineHandsFormReducer,
+    divineHands: divineHandsReducer
 })
 
 

@@ -26,6 +26,8 @@ const nationalKitchen = require("./routes/nationalKitchen")
 const mannerPalace = require("./routes/mannerPalace")
 const doublePortion = require("./routes/doublePortion")
 const numbers = require("./routes/numbers")
+const mimies = require("./routes/mimies")
+const divineHands = require("./routes/divineHands")
 
 
 app.use("/api/v1", products)
@@ -37,6 +39,8 @@ app.use("/api/v1", nationalKitchen)
 app.use("/api/v1", mannerPalace)
 app.use("/api/v1", doublePortion)
 app.use("/api/v1", numbers)
+app.use("/api/v1", mimies)
+app.use("/api/v1", divineHands)
 
 //middleWare to handle errors
 app.use(errorMiddleWares)

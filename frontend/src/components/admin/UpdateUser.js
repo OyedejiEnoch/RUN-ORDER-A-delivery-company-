@@ -134,6 +134,12 @@ const UpdateUser = () => {
                                         <option value="admin">admin</option>
                                         <option value="agents">agents</option>
                                         <option value="team">team</option>
+                                        <option value="MannerPalace">MannerPalace</option>
+                                        <option value="DoublePortion">DoublePortion</option>
+                                        <option value="Numbers">Numbers</option>
+                                        <option value="Numbers">NationalKitchen</option>
+                                        <option value="Mimies">Mimies</option>
+                                        <option value="DivineHands">DivineHands</option>
                                     </select>
                                 </div>
 

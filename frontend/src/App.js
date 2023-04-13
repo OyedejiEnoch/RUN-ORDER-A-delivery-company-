@@ -47,6 +47,9 @@ import AgentsForm from './components/admin/AgentsForm';
 import MannerForm from './components/admin/MannerForm';
 import NumbersForm from './components/admin/NumbersForm';
 import DoublePortionForm from './components/admin/DoublePortionForm';
+import NationalKitchenForm from './components/admin/NationalKitchenForm';
+import MimiesForm from './components/admin/MimiesForm';
+import DivineHandsForm from './components/admin/DivineHandsForm';
 
 
 // import { useEffect } from 'react';
@@ -124,7 +127,9 @@ function App() {
           <Route path='/admin/mannerPalaceForm' element={<ProtectedRoute isAdmin={true} ><MannerForm /></ProtectedRoute>} exact />
           <Route path='/admin/numbersForm' element={<ProtectedRoute isAdmin={true} ><NumbersForm /></ProtectedRoute>} exact />
           <Route path='/admin/doublePortion' element={<ProtectedRoute isAdmin={true} ><DoublePortionForm /></ProtectedRoute>} exact />
-
+          <Route path='/admin/nationalKitchen' element={<ProtectedRoute isAdmin={true}> <NationalKitchenForm /> </ProtectedRoute>}  exact></Route>
+          <Route path='/admin/mimies' element={<ProtectedRoute isAdmin={true}> <MimiesForm /> </ProtectedRoute>}  exact></Route>
+          <Route path='/admin/divineHands' element={<ProtectedRoute isAdmin={true}> <DivineHandsForm /> </ProtectedRoute>}  exact></Route>
         </Routes>
 
 

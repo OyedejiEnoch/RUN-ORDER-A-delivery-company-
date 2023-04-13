@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect, } from "react";
 import Sidebar from "./Sidebar";
 
 import MetaData from "../layout/MetaData";
-import {getCafeteriaForm} from "../../action/mannerPalaceActions"
+import {getCafeteriaForm} from "../../action/divineHandsActions"
 import { useDispatch, useSelector } from "react-redux"
 import Loader from "../layout/Loader";
 import { toast, } from "react-toastify"
@@ -10,17 +10,19 @@ import Pagination from "react-js-pagination"
 import { useParams } from "react-router-dom";
 import MannerPalaceForm from "../formsDisplay/MannerPalaceForm";
 import MannerForm from "../forms/MannerForm";
+import DivineHandsFormFill from "../forms/DivineHandsFormFill";
+import DivineHandsDisplay from "../formsDisplay/DivineHandsDisplay";
 
+const DivineHandsForm = () => {
 
-const AgentsForm = () => {
-
+    
     const params = useParams()
     const [currentPage, setCurrentPage] = useState(1)
 
 
     const dispatch = useDispatch()
 
-    const { loading, cafeteriaForms, error, formsCount, totalAmount ,resPerPage } = useSelector(state => state.allCafeteriaForm)
+    const { loading, cafeteriaForms, error, formsCount, divinetotalAmount ,resPerPage } = useSelector(state => state.allDivineCafeteriaForm)
 
     // const keyword = params.keyword
 
@@ -42,6 +44,8 @@ const AgentsForm = () => {
     function setCurrentPageNo(pageNumber) {
         setCurrentPage(pageNumber)
     }
+
+
 
   return (
     <Fragment>
@@ -73,11 +77,11 @@ const AgentsForm = () => {
 
             <div className="col-12 col-md-10">
                 <div className="agentsCount">
-                <h2>Manner Palace</h2>
+                <h2>Divine Hands</h2>
                 <h1>Total Orders taken: <span>{formsCount} </span> </h1>
-                <h1>Total Amount:<span><i className="fa-solid fa-naira-sign"></i>{totalAmount}</span> </h1>
+                <h1>Total Amount:<span><i className="fa-solid fa-naira-sign"></i>{divinetotalAmount}</span> </h1>
 
-               <MannerForm />
+               <DivineHandsFormFill />
                 </div>
 
                 {loading ? <Loader /> : (
@@ -85,7 +89,7 @@ const AgentsForm = () => {
                 
                 {cafeteriaForms && cafeteriaForms.map(form => (
                 
-                    <MannerPalaceForm key={form._id} forms={form} />
+                    <DivineHandsDisplay key={form._id} forms={form} />
                     ))}
                 </div>)}
             </div>
@@ -114,4 +118,4 @@ const AgentsForm = () => {
   )
 }
 
-export default AgentsForm
+export default DivineHandsForm

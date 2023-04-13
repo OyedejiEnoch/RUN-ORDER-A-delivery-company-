@@ -24,6 +24,9 @@ function Dashboard() {
     const { totalAmount:amount} = useSelector(state => state.allCafeteriaForm)
     const { numberstotalAmount:NumbersAmount} = useSelector(state => state.allNumbersCafeteriaForm)
     const { dptotalAmount} = useSelector(state => state.allDpCafeteriaForm)
+    const { nktotalAmount} = useSelector(state => state.allNkCafeteriaForm)
+    const { mimiestotalAmount} = useSelector(state => state.allMimiesCafeteriaForm)
+    const { divinetotalAmount} = useSelector(state => state.allDivineCafeteriaForm)
     const { orders, totalAmount, loading } = useSelector(state => state.allOrders)
 
     let outOfStock = 0;
@@ -81,7 +84,8 @@ function Dashboard() {
                          
 
                             <div className="row pr-4">
-                                <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                            { user && user.role !== "admin" && user.role !== "team" ? null :
+                                (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
                                     <div className="card o-hidden h-100 dashbordBg">
                                         <div className="card-body">
                                             <div className="text-center ">Products<br /> <i className="fa-solid fa-cart-shopping"></i>  <b>{products && products.length}</b></div>
@@ -93,7 +97,7 @@ function Dashboard() {
                                             </span>
                                         </Link>
                                     </div>
-                                </div>
+                                </div>) }
 
 
                                 <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
@@ -151,8 +155,8 @@ function Dashboard() {
 
 
                         <div className="row pr-4">
-
-                            <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                        { user && user.role !== "admin" && user.role !=="team" ? null :
+                            (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
                                     <div className="card o-hidden h-100 dashbordBg">
                                         <div className="card-body">
                                             <div className="text-center ">AgentsOrders<br /> <i className="fa-solid fa-cart-shopping"></i> <b>{agentsCount && agentsCount}</b></div>
@@ -164,9 +168,11 @@ function Dashboard() {
                                             </span>
                                         </Link>
                                     </div>
-                                </div>
+                                </div>) }
 
-                            <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                            { user && user.role !=="admin" && user.role !=="team" && user.role !=="MannerPalace" ? null :
+
+                            (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
                                     <div className="card o-hidden h-100 dashbordBg">
                                         <div className="card-body">
                                             <div className="text-center ">MannerPalace<br /> <i className="fa-solid fa-naira-sign"></i> <b>{ amount}</b></div>
@@ -178,8 +184,10 @@ function Dashboard() {
                                             </span>
                                         </Link>
                                     </div>
-                                </div>
-                            <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                </div>) }
+
+                            { user && user.role !== "admin" && user.role !=="team" && user.role !=="Numbers" ? null :
+                         (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
                                     <div className="card o-hidden h-100 dashbordBg">
                                         <div className="card-body">
                                             <div className="text-center ">Numbers<br /> <i className="fa-solid fa-naira-sign"></i> <b>{NumbersAmount}</b></div>
@@ -191,9 +199,10 @@ function Dashboard() {
                                             </span>
                                         </Link>
                                     </div>
-                                </div>
+                                </div>) }
 
-                            <div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                            {user && user.role !=="admin" && user.role !=="team" && user.role !=="DoublePortion" ? null :
+                           (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
                                     <div className="card o-hidden h-100 dashbordBg">
                                         <div className="card-body">
                                             <div className="text-center ">DoublePortion<br /> <i className="fa-solid fa-naira-sign"></i> <b>{dptotalAmount}</b></div>
@@ -205,7 +214,52 @@ function Dashboard() {
                                             </span>
                                         </Link>
                                     </div>
-                                </div>
+                                </div>)}
+
+                            { user && user.role !=="admin" && user.role !=="team" && user.role !=="NationalKitchen" ? null :
+                            (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">National Kitchen<br /> <i className="fa-solid fa-naira-sign"></i> <b>{nktotalAmount}</b></div>
+                                        </div>
+                                        <Link className="card-footer clearfix small z-1" to="/admin/nationalKitchen">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>)}
+
+                            { user && user.role !=="admin" && user.role !=="team" && user.role !=="Mimies" ? null :
+                        (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">Mimies<br /> <i className="fa-solid fa-naira-sign"></i> <b>{mimiestotalAmount}</b></div>
+                                        </div>
+                                        <Link className="card-footer clearfix small z-1" to="/admin/mimies">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>)}
+
+                            {user && user.role !=="admin" && user.role !=="team" && user.role !=="DivineHands" ? null :
+                          (<div className="col-xl-3 col-sm-6 mb-3 dashbordBox">
+                                    <div className="card o-hidden h-100 dashbordBg">
+                                        <div className="card-body">
+                                            <div className="text-center ">Divine Hands<br /> <i className="fa-solid fa-naira-sign"></i> <b>{divinetotalAmount}</b></div>
+                                        </div>
+                                        <Link className="card-footer clearfix small z-1" to="/admin/divineHands">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>)}
 
                                 
                             </div>
@@ -213,15 +267,15 @@ function Dashboard() {
 
 
 
-
-                        <div className="barChart">
+                            {user && user.role !=="admin" && user.role !=="team"  ? null :
+                        (<div className="barChart">
                         
                         <CircularProgressbar value={value} maxValue={100} text={`${value}%`}  styles={buildStyles({
                             textSize: '14px',
                             strokeWidth:"7",
                         })}/>;
                         <p>Percentage of users registered</p>
-                        </div>
+                        </div>)}
 
 
                         </Fragment>

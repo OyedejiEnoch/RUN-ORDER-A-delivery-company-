@@ -38,7 +38,7 @@ function Shipping() {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={handleSubmit}>
-                        <h1 className="mb-4">Delivery Info</h1>
+                        <h1 className="mb-4" style={{ fontFamily: 'Dancing Script'}}>Delivery Info</h1>
                         <div className="form-group">
                             <label htmlFor="address_field">Address</label>
                             <input

@@ -37,7 +37,7 @@ function Header() {
             <div className={active ? "headerNav active" : "headerNav"} >
                 <div className="navbarContainer" >
                     <div className="navbarLogo">
-                        <Link to={"/"} style={{ color: "black" }} className="link"><h1>Run Order</h1> </Link>
+                        <Link to={"/"} style={{ color: "black" }} className="link"><h1>RunOrder</h1> </Link>
                     </div>
                     <div className="navbarMenu">
                         <Link style={{ color: "black" }} to="/cart" className="link">
@@ -57,7 +57,7 @@ function Header() {
 
                                 (
                                     <div className="navbarUserProfile">
-                                        <img onClick={() => setOpen(!open)} src={user.avatar ? user.avatar.url : "./images/undraw_pic_profile_re_7g2h.svg"} alt={user && user.name} />
+                                        <img onClick={() => setOpen(!open)} src={ "./images/undraw_pic_profile_re_7g2h.svg"} alt={user && user.name} />
                                         <p className="userName" onClick={() => setOpen(!open)}>{user && user.name}</p>
                                         <span onClick={() => setOpen(!open)}><i className="fa-solid fa-angle-down"></i></span>
                                         <span onClick={() => setOpen(!open)}><i className="fa-solid fa-bars"></i></span>
@@ -67,7 +67,8 @@ function Header() {
 
                             {open &&
                                 (<div className="options">
-                                    {user && user.role !== "admin" && user.role !== "agents" && user.role !== "team" ?
+                                    {user && user.role !== "admin" && user.role !== "agents" && user.role !== "team"  && user.role !== "MannerPalace"  && user.role !== "NationalKitchen" 
+                                    && user.role !== "Mimies"  && user.role !== "DoublePortion"  && user.role !== "Numbers"  && user.role !== "DivineHands"?
                                         (<Link className="link" style={{ color: "black" }} to="/orders/me">Orders</Link>) :
                                         (<Link style={{ color: "black" }} className="link" to="/dashbord">Dashbord</Link>)
                                     }

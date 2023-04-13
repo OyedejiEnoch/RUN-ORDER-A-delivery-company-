@@ -7,6 +7,7 @@ import MetaData from "../layout/MetaData";
 import { useParams } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
 import { addItemToCart } from "../../action/cartActions";
+import 'animate.css';
 import "./ProductDetails.css"
 
 function ProductDetails() {
@@ -62,7 +63,7 @@ function ProductDetails() {
             {loading ? <Loader /> : (
                 <Fragment>
                     <MetaData title={product.name} />
-                    <div className="row f-flex justify-content-around">
+                    <div className="row f-flex justify-content-around animate__animated animate__fadeIn">
                         <div className="col-12 col-lg-5 img-fluid" id="product_image">
                             <Carousel pause="hover">
                                 {product.images && product.images.map(image => (
@@ -73,7 +74,7 @@ function ProductDetails() {
                             </Carousel>
                         </div>
 
-                        <div className="col-12 col-lg-5 mt-5 productDetails">
+                        <div className="col-12 col-lg-5 mt-5 productDetails animate__animated animate__fadeIn">
 
                             <div className="productDesc">
                                 <p>Run order products</p>

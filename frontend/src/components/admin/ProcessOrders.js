@@ -105,7 +105,7 @@ function ProcessOrder() {
 
 
                                     <h4 className="my-4">Order Status:</h4>
-                                    <p className={order.orderStatus && String(order.orderStatus).includes('Delivered') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
+                                    <p className={order.orderStatus && String(order.orderStatus).includes('Accepted') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
 
 
 
@@ -144,8 +144,7 @@ function ProcessOrder() {
                                             onChange={(e) => setStatus(e.target.value)}
                                         >
                                             <option value="Processing">Processing</option>
-                                            <option value="Shipped"> Accepted</option>
-                                            <option value="Delivered">Delivered</option>
+                                            <option value="Accepted">Accepted</option>
                                         </select>
                                     </div>
 

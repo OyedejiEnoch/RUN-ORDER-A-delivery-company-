@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import "./OrderDetails.css"
 
 
 import Loader from "../layout/Loader";
@@ -58,25 +59,27 @@ function OrderDetails() {
                             <h4 className="my-4">Order Items:</h4>
 
                             <hr />
-                            <div className="cart-item my-1">
+                            <div className="cart-item1 ">
                                 {orderItems && orderItems.map(item => (
-                                    <div className="row my-5" key={item.product}>
-                                        <div className="col-4 col-lg-2">
-                                            <img src={item.image} alt={item.name} height="45" width="65" />
+                                    <div className="cart-item1" key={item.product}>
+                                    <div className="cartAdjust">
+                                        <div className="cartAdjustProduct">
+                                            <img src={item.image} alt={item.name} height="45" width="65" /> <Link className="link" to={`/products/${item.product}`}>{item.name}</Link>
                                         </div>
 
-                                        <div className="col-5 col-lg-5">
+                                        {/* <div className="cartAdjustPrice">
                                             <Link to={`/products/${item.product}`}>{item.name}</Link>
+                                        </div> */}
+
+
+                                        <div className="cartAdjustPrice1">
+                                            <p> <i class="fa-solid fa-naira-sign"></i>{item.price} * {item.quantity}</p>
                                         </div>
 
-
-                                        <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                                            <p>{item.price}</p>
-                                        </div>
-
-                                        <div className="col-4 col-lg-3 mt-4 mt-lg-0">
+                                        {/* <div className="col-4 col-lg-3 mt-4 mt-lg-0">
                                             <p>{item.quantity}</p>
-                                        </div>
+                                        </div> */}
+                                    </div>
                                     </div>
                                 ))}
 

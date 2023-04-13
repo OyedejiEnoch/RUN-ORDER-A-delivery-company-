@@ -52,9 +52,9 @@ function Home() {
         <Fragment>
 
 
-            <div className="header">
+            <div className="headerHome">
 
-                <div className="headerCov">
+                <div className="headerCovHome">
                     <h1>Welcome to <span> Run Order </span> Products</h1>
                     <Search />
                 </div>
@@ -64,7 +64,7 @@ function Home() {
 
 
             {loading ? <Loader /> : (
-                <div className="container container-fluid homePage">
+                <div className="container container-fluid homePageHome">
 
                     <MetaData title={"Order to enjoy the experience"} />
                     <h1 id="products_heading">All Products</h1>

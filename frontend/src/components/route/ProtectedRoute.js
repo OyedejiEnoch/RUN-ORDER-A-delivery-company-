@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect } from "react";
-import { Route, redirect, Routes, useNavigate, Navigate } from "react-router-dom";
+import React, {  useEffect } from "react";
+import { useNavigate, Navigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "../../action/userActions";
@@ -19,7 +19,8 @@ function ProtectedRoute({ children, isAdmin }) {
 
     if (loading) return <h1>loading...</h1>
     if (!loading && isAunthenticated) {
-        if (isAdmin === true && user.role !== "admin" && user.role !== "team" && user.role !== "agents") {
+        if (isAdmin === true && user.role !== "admin" && user.role !== "team" && user.role !== "agents" && user.role !== "MannerPalace" && user.role !== "NationalKitchen"
+        && user.role !== "DoublePortion" && user.role !== "Mimies" && user.role !== "Numbers" && user.role !== "DivineHands") {
             return <Navigate to="/" />
         }
         return children;

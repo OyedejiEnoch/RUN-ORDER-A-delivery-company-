@@ -300,9 +300,9 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
     if (!user) {
         return next(new ErrorHandler(`User not found with id: ${req.params.id}`), 500)
     }
-    //Remove avatar from Todo
-    const image_id = user.avatar.public_id;
-    await cloudinary.v2.uploader.destroy(image_id);
+    // //Remove avatar from Todo
+    // const image_id = user.avatar.public_id;
+    // await cloudinary.v2.uploader.destroy(image_id);
 
     await user.remove();
 
