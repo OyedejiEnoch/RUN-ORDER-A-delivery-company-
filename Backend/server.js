@@ -23,7 +23,10 @@ process.on("uncaughtException", err => {
 //setting up config file
 
 
-
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+  })
+  
 
 
 //connecting to database
