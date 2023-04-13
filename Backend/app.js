@@ -30,6 +30,14 @@ const mimies = require("./routes/mimies")
 const divineHands = require("./routes/divineHands")
 
 
+
+app.get('/', (req, res) => {
+    res.status(200).json({
+        success: true,
+
+    })
+  })
+
 app.use("/api/v1", products)
 
 app.use("/api/v1", authUsers)
