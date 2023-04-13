@@ -79,8 +79,8 @@ function App() {
 
         <Header />
         <Routes>
-          <Route path='/' element={<LandingPage />} exact />
-          <Route path='/home' element={<Home />} exact />
+          {/* <Route path='/' element={<LandingPage />} exact /> */}
+          <Route path='/' element={<Home />} exact />
           <Route path='/search/:keyword' element={<Home />} />
         </Routes>
         <div className="container container-fluid homePage">
