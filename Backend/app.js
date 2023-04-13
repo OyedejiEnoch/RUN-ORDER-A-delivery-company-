@@ -28,6 +28,7 @@ const doublePortion = require("./routes/doublePortion")
 const numbers = require("./routes/numbers")
 const mimies = require("./routes/mimies")
 const divineHands = require("./routes/divineHands")
+const healthchecker = require("./routes/healthchecker")
 
 
 
@@ -49,6 +50,7 @@ app.use("/api/v1", doublePortion)
 app.use("/api/v1", numbers)
 app.use("/api/v1", mimies)
 app.use("/api/v1", divineHands)
+app.use('/healthcheck', healthchecker)
 
 //middleWare to handle errors
 app.use(errorMiddleWares)

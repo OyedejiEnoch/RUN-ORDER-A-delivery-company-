@@ -29,6 +29,9 @@ h4 {
     flex-direction: column;
 } */
 
+.productDesc h2 {
+ text-align:left;
+}
 .productDesc p {
     font-size: 13px;
     letter-spacing: 0.5px;
