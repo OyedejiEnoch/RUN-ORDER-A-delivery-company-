@@ -72,7 +72,7 @@ function Header() {
                                         (<Link className="link" style={{ color: "black" }} to="/orders/me">Orders</Link>) :
                                         (<Link style={{ color: "black" }} className="link" to="/dashbord">Dashbord</Link>)
                                     }
-                                    <Link className="link" style={{ color: "black" }} to="/Home">Home</Link>
+                                    <Link className="link" style={{ color: "black" }} to="/">Home</Link>
                                     <Link style={{ color: "black" }} className="dropdown-item" to="/me">Profile</Link>
                                     <Link style={{ color: "black" }} className="dropdown-item" to="/" onClick={handleLogout}>Logout</Link>
 

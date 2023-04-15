@@ -3,11 +3,13 @@ const app = express();
 const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 const cloudinary = require("cloudinary")
-const fileupload = require("express-fileupload")
+const fileupload = require("express-fileupload");
+const cors = require('cors')
 
 
 const errorMiddleWares = require("./middleWares/errors")
 
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 5000 }));

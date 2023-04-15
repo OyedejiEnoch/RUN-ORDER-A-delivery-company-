@@ -1,4 +1,5 @@
 import axios from "axios"
+import newRequest from "../utils/newRequest"
 import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
@@ -50,7 +51,7 @@ export const login = (email, password) => async (dispatch) => {
                 "content-Type": "application/json"
             }
         }
-        const { data } = await axios.post("/api/v1/login", { email, password, config })
+        const { data } = await newRequest.post("/api/v1/login", { email, password, config })
 
         dispatch({
             type: LOGIN_SUCCESS,

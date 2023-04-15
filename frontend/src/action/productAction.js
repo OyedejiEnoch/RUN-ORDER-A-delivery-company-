@@ -1,4 +1,5 @@
 import axios from "axios"
+import newRequest from "../utils/newRequest"
 import {
     ALL_PRODUCTS_REQUEST,
     ALL_PRODUCTS_SUCCESS,
@@ -33,7 +34,7 @@ export const getProducts = (keyword = " ", currentPage = 1) => async (dispatch) 
         //this will perform the get request in the productreducers
         dispatch({ type: ALL_PRODUCTS_REQUEST })
         //then get all data 
-        const { data } = await axios.get(`/api/v1/products?keyword=${keyword}&page=${currentPage}`)
+        const { data } = await newRequest.get(`/api/v1/products?keyword=${keyword}&page=${currentPage}`)
         //then get the success and pass the data
         dispatch({
             type: ALL_PRODUCTS_SUCCESS,
