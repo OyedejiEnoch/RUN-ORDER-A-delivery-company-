@@ -99,7 +99,7 @@ function ProcessOrder() {
                                     <p><b>Phone:</b> {shippingInfo && shippingInfo.phoneNo}</p>
                                     <p className="mb-4"><b>Address:</b>{shippingInfo && shippingInfo.address}</p>
                                     <p className="mb-4"><b>Cafeteria:</b>{shippingInfo && shippingInfo.cafeteria}</p>
-                                    <p><b>Amount:</b><i class="fa-solid fa-naira-sign"></i>{totalPrice}</p>
+                                    <p><b>Amount:</b><i class="fa-solid fa-naira-sign"></i>{totalPrice - 200}</p>
 
                                     <hr />
 

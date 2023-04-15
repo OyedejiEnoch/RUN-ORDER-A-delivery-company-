@@ -72,7 +72,7 @@ function OrderList() {
         orders.forEach(order => {
             data.rows.push({
                 numofItems: order.shippingInfo.address,
-                amount: `N ${order.totalPrice}`,
+                amount: `N ${order.totalPrice - 200}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')
                     ? <p style={{ color: 'green' }}>{order.orderStatus}</p>
                     : <p style={{ color: 'red' }}>{order.orderStatus}</p>,

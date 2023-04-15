@@ -20,7 +20,7 @@ function Dashboard() {
     const { products } = useSelector(state => state.products)
     const { user } = useSelector(state => state.auth)
     const { users } = useSelector(state => state.allUsers)
-    const { agents, agentsCount} = useSelector(state => state.allAgentsOrderFrom)
+    const { agentsCount} = useSelector(state => state.allAgentsOrderFrom)
     const { totalAmount:amount} = useSelector(state => state.allCafeteriaForm)
     const { numberstotalAmount:NumbersAmount} = useSelector(state => state.allNumbersCafeteriaForm)
     const { dptotalAmount} = useSelector(state => state.allDpCafeteriaForm)
@@ -76,7 +76,7 @@ function Dashboard() {
 
                 <div className="col-12 col-md-10 dashbord">
                     <h1 className="my-4">Dashboard</h1>
-
+                   <h2> {user && user.name} </h2>
                     {loading ? <Loader /> : (
                         <Fragment>
                             <MetaData title={"Admin Dashbord"} />

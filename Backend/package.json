@@ -4,10 +4,10 @@
   "description": "An Ordering Website",
   "main": "index.js",
   "scripts": {
-    "start": "node Backend/server.js",
-    "seeder": "node Backend/utils/seeder.js",
-    "dev": "set NODE_ENV=DEVELOPMENT& nodemon Backend/server",
-    "prod": "set NODE_ENV=PRODUCTION& nodemon Backend/server"
+    "start": "node backend/server.js",
+    "seeder": "node backend/utils/seeder.js",
+    "dev": "set NODE_ENV=DEVELOPMENT& nodemon server",
+    "prod": "set NODE_ENV=PRODUCTION& nodemon server"
   },
   "author": "Oyedeji Enoch Olaoluwa",
   "license": "ISC",
