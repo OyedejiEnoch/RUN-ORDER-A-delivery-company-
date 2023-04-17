@@ -38,6 +38,7 @@ import {
     DELETE_USER_FAIL,
     CLEAR_ERRORS
 } from "../constants/userConstants"
+axios.defaults.withCredentials = true;
 
 
 //to Login
@@ -51,7 +52,7 @@ export const login = (email, password) => async (dispatch) => {
                 "content-Type": "application/json"
             }
         }
-        const { data } = await newRequest.post("/api/v1/login", { email, password, config })
+        const { data } = await axios.post("/api/v1/login", { email, password, config })
 
         dispatch({
             type: LOGIN_SUCCESS,

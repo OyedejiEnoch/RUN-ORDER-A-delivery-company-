@@ -25,6 +25,7 @@ import {
 
     CLEAR_ERRORS
 } from "../constants/productsConstants"
+axios.defaults.withCredentials = true;
 
 
 // we will firstly dispatch all products request which will set loading to true
@@ -34,7 +35,7 @@ export const getProducts = (keyword = " ", currentPage = 1) => async (dispatch) 
         //this will perform the get request in the productreducers
         dispatch({ type: ALL_PRODUCTS_REQUEST })
         //then get all data 
-        const { data } = await newRequest.get(`/api/v1/products?keyword=${keyword}&page=${currentPage}`)
+        const { data } = await axios.get(`/api/v1/products?keyword=${keyword}&page=${currentPage}`)
         //then get the success and pass the data
         dispatch({
             type: ALL_PRODUCTS_SUCCESS,

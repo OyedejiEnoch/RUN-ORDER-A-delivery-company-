@@ -1,5 +1,5 @@
 import axios from "axios"
-
+import newRequest from "../utils/newRequest"
 import {
     CREATE_ORDER_REQUEST,
     CREATE_ORDER_SUCCESS,
@@ -21,7 +21,7 @@ import {
     DELETE_0RDERS_FAIL,
     CLEAR_ERRORS
 } from "../constants/orderConstants"
-
+axios.defaults.withCredentials = true;
 
 
 export const createOrder = (order) => async (dispatch, getState) => {

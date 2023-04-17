@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,} from "react-router-dom";
 import { MDBDataTable } from "mdbreact";
 
 import Loader from "../layout/Loader";
@@ -57,7 +57,7 @@ function ListOrder() {
                
                 numOfItems: order.orderItems.length,
                 amount: `${order.totalPrice}`,
-                status: order.orderStatus && String(order.orderStatus).includes('Delivered')
+                status: order.orderStatus && String(order.orderStatus).includes('Accepted')
                     ? <p style={{ color: 'green' }}>{order.orderStatus}</p>
                     : <p style={{ color: 'red' }}>{order.orderStatus}</p>,
                 actions:
